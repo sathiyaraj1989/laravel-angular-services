@@ -15,6 +15,6 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->group(function () {
     Route::get('todos', 'TodoController');
-    Route::get('users', 'UserController@index');
+    Route::resource('users', 'UserController');
 });
 

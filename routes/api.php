@@ -16,5 +16,8 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->group(function () {
     Route::get('todos', 'TodoController');
     Route::resource('users', 'UserController');
+    Route::get('user', function() {
+        return response()->json(request()->user());
+    });
 });
 

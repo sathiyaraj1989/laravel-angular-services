@@ -21,4 +21,11 @@ class UserController extends Controller
         $response = ["status" => "success", "data" => $user->toArray()];
         return response(json_encode($response), 200, ["Content-Type" => "application/json"]);        
     }
+    
+    public function show($id) {
+        $user = User::whereId($id)->first();
+        $response = ["status" => "success", "data" => $user->toArray()];
+        return response(json_encode($response), 200, ["Content-Type" => "application/json"]);
+        
+    }
 }
